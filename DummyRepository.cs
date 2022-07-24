@@ -18,15 +18,15 @@ namespace CoreDockerApi
         {
             db = new DB2Connection(strConnection);
         }
-        
+
         public IList<ProductModel> GetDummyData()
         {
             return db.Query<ProductModel>(QueryDummyData).AsList();
         }
 
-        private string QueryDummyData 
+        private string QueryDummyData
         {
-            get 
+            get
             {
                 return "SELECT * FROM TEST.PRODUCTS";
             }
