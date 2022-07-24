@@ -32,7 +32,7 @@ docker build -t core-db2-api:3.1 .
 docker rm core_docker_db2_api --force
 
 3) subir o container
-docker run -d -p 8001:80 --name core_docker_db2_api -e CONNECTION_STRING=U2VydmVyPW15ZGIyOjUwMDAwO0RhdGFiYXNlPXRlc3RkYjtVSUQ9ZGIyaW5zdDE7UFdEPW15REIyQDEyMzs= -v c:\Temp:/tmp core-db2-api:3.1
+docker run -d -p 8001:80 --name core_docker_db2_api --network=db-network -e CONNECTION_STRING=U2VydmVyPW15ZGIyOjUwMDAwO0RhdGFiYXNlPXRlc3RkYjtVSUQ9ZGIyaW5zdDE7UFdEPW15REIyQDEyMzs= -v c:\Temp:/tmp core-db2-api:3.1
 
 4) consultar os logs
 docker logs core_docker_db2_api
